@@ -3,88 +3,380 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ReelsNepal — Hero (Curved Bottom)</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --page:#F6F3EE;
-    --text:#ffffff;
-    --grad1:#6D28D9;
-    --grad2:#C026D3;
-    --grad3:#FF3C68;
-    --cta1:#7F56D9;
-    --cta2:#A78BFA;
-    --pill:#FFA64D;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;background:var(--page);color:var(--text);font-family:Inter,sans-serif}
-
-  .hero{position:relative;width:100%;min-height:78vh;overflow:clip;display:grid;grid-template-rows:auto 1fr}
-  .hero-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-
-  .inner{width:min(1200px,94vw);margin:0 auto;position:relative;z-index:1}
-  .topbar{display:flex;align-items:center;justify-content:space-between;padding:24px 0}
-  .brand{display:flex;align-items:center;gap:12px;font-family:Poppins,sans-serif}
-  .logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,#ff6a88,#ff3c68,#ff9a44)}
-  .logo svg{width:18px;height:18px;fill:#fff}
-  .brand span{font-weight:800;font-size:22px}
-  .pill{color:#141414;text-decoration:none;font-weight:600;background:var(--pill);padding:12px 18px;border-radius:999px}
-
-  .body{display:grid;align-content:center;padding:12px 0 56px}
-  h1{font:800 clamp(42px,5.5vw,72px)/1.05 Poppins,Inter,sans-serif;margin:8px 0 14px}
-  .gradient-word{background:linear-gradient(90deg,#FFC857 0%,#FF7A59 24%,#FF3C68 55%,#D946EF 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .subline{max-width:65ch;font-size:19px;line-height:1.65;opacity:.96}
-  .cta-row{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap}
-  .btn{color:#fff;text-decoration:none;font-weight:600;padding:15px 24px;border-radius:12px;background:linear-gradient(180deg,var(--cta1),var(--cta2))}
-  .btn.secondary{background:linear-gradient(180deg,#FF3C68,#FF7A59)}
-</style>
+<title>ReelsNepal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css" />
 </head>
 <body>
-<section class="hero" aria-label="Hero with curved bottom">
-  <svg class="hero-svg" viewBox="0 0 2400 900" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="bgGrad" x1="0" y1="1" x2="1" y2="0">
-        <stop offset="0%"   stop-color="#C665FF"/>
-        <stop offset="45%"  stop-color="var(--grad2)"/>
-        <stop offset="100%" stop-color="var(--grad3)"/>
-      </linearGradient>
-      <radialGradient id="lift" cx="0.18" cy="0.94" r="0.55">
-        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
-        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <rect width="2400" height="900" fill="url(#bgGrad)"/>
-    <g opacity="0.28"><circle cx="1900" cy="340" r="200" fill="#FFFFFF"/></g>
-    <g opacity="0.20"><circle cx="1500" cy="640" r="300" fill="#FFFFFF"/></g>
-    <g opacity="0.9">
-      <path d="M1200 525 l18 0 -18 0 0 18 0 -18 -18 0 18 0 0 -18z" fill="#fff"/>
-      <path d="M1200 525 l12 0 -12 0 0 12 0 -12 -12 0 12 0 0 -12z" fill="#fff" opacity="0.6"/>
-    </g>
-    <rect width="2400" height="900" fill="url(#lift)"/>
-    <path d="M0,780 C 600,920 1600,700 2400,820 L2400,900 L0,900 Z" fill="var(--page)"/>
-  </svg>
-
-  <div class="inner">
-    <div class="topbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M17 3H7a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4Zm-1.8 3 3.1 4.8H9.6L6.5 6H15.2Zm3.8 11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8.6l3.3 5.1a2 2 0 0 0 1.7.9h9.3V17Z"/></svg>
+  <!-- Hero -->
+  <section class="hero section" aria-label="Hero with curved bottom">
+    <svg class="hero-bg" viewBox="0 0 2400 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="bgGrad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stop-color="#C665FF"/>
+          <stop offset="45%" stop-color="#C026D3"/>
+          <stop offset="100%" stop-color="#FF3C68"/>
+        </linearGradient>
+        <radialGradient id="lift" cx="0.18" cy="0.94" r="0.55">
+          <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="2400" height="900" fill="url(#bgGrad)"/>
+      <g opacity="0.28"><circle cx="1900" cy="340" r="200" fill="#FFFFFF"/></g>
+      <g opacity="0.20"><circle cx="1500" cy="640" r="300" fill="#FFFFFF"/></g>
+      <rect width="2400" height="900" fill="url(#lift)"/>
+      <path d="M0,780 C 600,920 1600,700 2400,820 L2400,900 L0,900 Z" fill="#F6F3EE"/>
+    </svg>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17 3H7a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4Zm-1.8 3 3.14.8H9.6L6.5 6H15.2Zm3.8 11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8.6l3.3 5.1a2 2 0 0 0 1.7.9h9.3V17Z"/></svg>
+          </div>
+          <span>ReelsNepal</span>
         </div>
-        <span>ReelsNepal</span>
+        <a class="pill" href="#contact">Let's Talk</a>
       </div>
-      <a class="pill" href="#contact">Let's Talk</a>
+      <div class="body">
+        <h1>Turn Your Ideas<br>into <span class="gradient-word">Viral Reels</span></h1>
+        <p class="subline">We’re Nepal’s one-stop creative studio for Reels, Shorts, and Social Media content. Whether you’re a brand, startup, or creator—we turn your message into magic.</p>
+        <div class="cta-row">
+          <a class="btn" href="#get-started">Get Started</a>
+          <a class="btn btn--accent" href="#portfolio">View Portfolio</a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="body">
-      <h1>Turn Your Ideas<br>into <span class="gradient-word">Viral Reels</span></h1>
-      <p class="subline">We’re Nepal’s one-stop creative studio for Reels, Shorts, and Social Media content. Whether you’re a brand, startup, or creator—we turn your message into magic.</p>
-      <div class="cta-row">
-        <a class="btn" href="#get-started">Get Started</a>
-        <a class="btn secondary" href="#portfolio">View Portfolio</a>
+  <!-- What we create for you -->
+  <section class="section create" id="services">
+    <div class="container">
+      <h2 class="section-title">What We Create For You</h2>
+      <div class="cards grid-4">
+        <article class="card card--pink">
+          <div class="icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="16" y="8" width="32" height="48" rx="8" ry="8" fill="none" stroke="currentColor" stroke-width="4"/>
+              <polygon points="30,26 30,38 42,32" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Reels &amp; Shorts</h3>
+          <p class="card-sub">TikTok, IG, YouTube</p>
+          <p class="card-desc">Scroll‑stopping edits for brands &amp; creators</p>
+        </article>
+        <article class="card card--purple">
+          <div class="icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="14" y="12" width="28" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="4"/>
+              <line x1="20" y1="22" x2="36" y2="22" stroke="currentColor" stroke-width="4"/>
+              <line x1="20" y1="30" x2="36" y2="30" stroke="currentColor" stroke-width="4"/>
+              <line x1="20" y1="38" x2="32" y2="38" stroke="currentColor" stroke-width="4"/>
+              <circle cx="47" cy="34" r="7" stroke="currentColor" stroke-width="4"/>
+              <rect x="44" y="41" width="6" height="6" rx="2" stroke="currentColor" stroke-width="4"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Script +<br>Voiceovers</h3>
+          <p class="card-desc">We write it, voice it,<br>and sell your idea.</p>
+        </article>
+        <article class="card card--butter">
+          <div class="icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="12" y="14" width="40" height="30" rx="6" fill="none" stroke="currentColor" stroke-width="4"/>
+              <circle cx="24" cy="26" r="4" fill="none" stroke="currentColor" stroke-width="4"/>
+              <polyline points="18,38 28,30 36,36 44,32" fill="none" stroke="currentColor" stroke-width="4" />
+              <line x1="48" y1="18" x2="56" y2="10" stroke="currentColor" stroke-width="4"/>
+              <circle cx="56" cy="10" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Graphics +<br>Thumbnails</h3>
+          <p class="card-desc">Bold + clickworthy</p>
+        </article>
+        <article class="card card--lilac">
+          <div class="icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="12" y="16" width="40" height="34" rx="8" fill="none" stroke="currentColor" stroke-width="4"/>
+              <line x1="12" y1="24" x2="52" y2="24" stroke="currentColor" stroke-width="4"/>
+              <line x1="22" y1="12" x2="22" y2="20" stroke="currentColor" stroke-width="4"/>
+              <line x1="42" y1="12" x2="42" y2="20" stroke="currentColor" stroke-width="4"/>
+              <polyline points="24,38 30,44 42,32" fill="none" stroke="currentColor" stroke-width="4"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Monthly<br>Packages</h3>
+          <p class="card-desc">Consistency + ROI</p>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- See our work -->
+  <section class="section work" id="portfolio">
+    <div class="container">
+      <h2 class="section-title">See Our Work in Action</h2>
+      <p class="section-sub">From trending reels to storytelling shorts — here’s how we bring brands to life.</p>
+      <div class="cards grid-2">
+        <article class="card c1">
+          <span class="pill">Faceless</span>
+          <div class="svg-wrap">
+            <svg viewBox="0 0 300 300" aria-hidden="true">
+              <defs>
+                <linearGradient id="phA" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#D9C7FF"/>
+                  <stop offset="100%" stop-color="#9C7BFF"/>
+                </linearGradient>
+              </defs>
+              <rect x="80" y="40" rx="28" ry="28" width="140" height="220" fill="url(#phA)" />
+              <rect x="105" y="85" rx="24" ry="24" width="90" height="120" fill="#8B6CFF"/>
+              <circle cx="150" cy="145" r="30" fill="#FFFFFF"/>
+              <polygon points="140,130 168,145 140,160" fill="#7A2BFF"/>
+            </svg>
+          </div>
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 7l8 5-8 5V7z" fill="#6F5BFF"/></svg>
+          </span>
+        </article>
+        <article class="card c2">
+          <span class="pill">Branding</span>
+          <div class="svg-wrap">
+            <svg viewBox="0 0 300 300" aria-hidden="true">
+              <defs>
+                <linearGradient id="rkA" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FFE5F2"/>
+                  <stop offset="100%" stop-color="#C6B6FF"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="170" cy="150" rx="70" ry="90" fill="url(#rkA)" />
+              <circle cx="195" cy="145" r="18" fill="#6F5BFF"/>
+              <path d="M100 210 L150 180 L140 230 Z" fill="#FF6B6B"/>
+              <path d="M240 200 L190 180 L200 230 Z" fill="#FF6B6B"/>
+              <path d="M170 235 Q165 265 150 280 Q175 270 190 255 Q178 260 170 235Z" fill="#FFB703"/>
+            </svg>
+          </div>
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 7l8 5-8 5V7z" fill="#6F5BFF"/></svg>
+          </span>
+        </article>
+      </div>
+      <div class="cta-bar"><button class="btn">View Portfolio</button></div>
+    </div>
+  </section>
+
+  <!-- Who we create for -->
+  <section class="section who" id="audience">
+    <div class="container">
+      <h2 class="section-title">Who We Create For</h2>
+      <div class="cards grid-4">
+        <article class="card" data-theme="1">
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <rect x="8" y="3" width="8" height="12" rx="4" stroke="#2B1E4A" stroke-width="2"/>
+              <path d="M5 11c0 4 3 7 7 7s7-3 7-7" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 18v3" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Influencers &amp; Creators</h3>
+          <p>Short form content that matches your voice and vibe — with or without your face.</p>
+        </article>
+        <article class="card" data-theme="2">
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path d="M13 11l-2 2-4-4 2-2c3-3 8-4 12-4 0 4-1 9-4 12l-2 2-4-4z" stroke="#2B1E4A" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M7 13l-2 4 4-2" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="16" cy="6" r="1.6" stroke="#2B1E4A" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Startups &amp; Brands</h3>
+          <p>Boost your reach with consistent, branded reels that tell your story.</p>
+        </article>
+        <article class="card" data-theme="3">
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path d="M8 14a4 4 0 1 1 8 0c0 2-2 3-2 4H10c0-1-2-2-2-4z" stroke="#2B1E4A" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M10 20h4" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Coaches &amp; Educators</h3>
+          <p>Turn ideas into engaging visuals for your audience — even if you hate editing.</p>
+        </article>
+        <article class="card" data-theme="4">
+          <div class="icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24" fill="none">
+              <path d="M4 12l12-6v12L4 12z" stroke="#2B1E4A" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 13l1.5 4" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 9a3 3 0 010 6" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Campaigns &amp; NGOs</h3>
+          <p>Spread your message with powerful storytelling in reel format.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why love us -->
+  <section class="section why" id="why-us">
+    <div class="container">
+      <h2 class="section-title">Why Creators &amp; Brands Love Us</h2>
+      <div class="cards grid-4">
+        <article class="card">
+          <div class="card-top tint-1">
+            <div class="icon">ICON</div>
+          </div>
+          <div class="card-body">
+            <h3>Strategic +<br>Creative</h3>
+            <p>Every reel is made to grab attention and convert.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top tint-2">
+            <div class="icon">ICON</div>
+          </div>
+          <div class="card-body">
+            <h3>Lightning Fast<br>Turnaround</h3>
+            <p>Get reels delivered in 72 hours.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top tint-3">
+            <div class="icon">ICON</div>
+          </div>
+          <div class="card-body">
+            <h3>Local Insight,<br>Global Quality</h3>
+            <p>Nepali storytelling with world‑class production.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top tint-4">
+            <div class="icon">ICON</div>
+          </div>
+          <div class="card-body">
+            <h3>Face or Faceless?<br>Both.</h3>
+            <p>We create stunning faceless reels.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="cards grid-3">
+        <article class="card">
+          <div>
+            <span class="q" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 7.5c0-1.657-1.343-3-3-3S3.5 5.843 3.5 7.5s1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 5.24 17.5c2.8-2.34 4.26-5.3 4.26-10zM20.5 7.5c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 16.24 17.5c2.8-2.34 4.26-5.3 4.26-10z"/></svg></span>
+            <p class="copy">They just get content. My reels finally started performing!</p>
+            <div class="person">
+              <span class="avatar"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="9" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg></span>
+              <div><div class="name">Ramesh S.</div><div class="role">Co‑founder, StartUpNepal</div></div>
+            </div>
+          </div>
+          <div class="stars" aria-label="5 star rating">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+          </div>
+        </article>
+        <article class="card">
+          <div>
+            <span class="q" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 7.5c0-1.657-1.343-3-3-3S3.5 5.843 3.5 7.5s1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 5.24 17.5c2.8-2.34 4.26-5.3 4.26-10zM20.5 7.5c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 16.24 17.5c2.8-2.34 4.26-5.3 4.26-10z"/></svg></span>
+            <p class="copy">Faceless videos that actually connect with people. Love the flow!</p>
+            <div class="person">
+              <span class="avatar"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="9" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg></span>
+              <div><div class="name">Sarita K.</div><div class="role">Lifestyle Creator</div></div>
+            </div>
+          </div>
+          <div class="stars" aria-label="5 star rating">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+          </div>
+        </article>
+        <article class="card">
+          <div>
+            <span class="q" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 7.5c0-1.657-1.343-3-3-3S3.5 5.843 3.5 7.5s1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 5.24 17.5c2.8-2.34 4.26-5.3 4.26-10zM20.5 7.5c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 16.24 17.5c2.8-2.34 4.26-5.3 4.26-10z"/></svg></span>
+            <p class="copy">Everything was delivered ahead of schedule— and better than expected.</p>
+            <div class="person">
+              <span class="avatar"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="9" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg></span>
+              <div><div class="name">Ankit M.</div><div class="role">Campaign Manager, NGOConnect</div></div>
+            </div>
+          </div>
+          <div class="stars" aria-label="5 star rating">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta section">
+    <div class="container">
+      <h2>Ready to Make<br>Reels That Work?</h2>
+      <p>Let’s create something scroll‑stopping together.</p>
+      <div class="cta-row">
+        <a href="#book-call" class="btn">Book Free Strategy Call</a>
+        <a href="#get-started" class="btn btn--accent">Get Started Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-name">ReelsNepal</div>
+        </div>
+        <div class="tagline">Viral Starts Here.</div>
+        <div class="email">hello@reelsnepal.com</div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <nav class="nav" aria-label="Footer Navigation">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+        <div class="socials" aria-label="Social Links">
+          <a class="icon" href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+            </svg>
+          </a>
+          <a class="icon" href="#" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15 6.5c1.1 1.7 2.8 2.7 5 2.9v3A8.9 8.9 0 0 1 15 11v4.2a5.2 5.2 0 1 1-3.5-4.9v3a2.3 2.3 0 1 0 1.5 2.2V3h2z" fill="white"/>
+            </svg>
+          </a>
+          <a class="icon" href="#" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="2.5" y="6.5" width="19" height="11" rx="3" stroke="white" stroke-width="2"/>
+              <path d="M11 10l5 3-5 3v-6z" fill="white"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <nav class="nav">
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+    <div class="divider" aria-hidden="true"></div>
+  </footer>
 </body>
 </html>

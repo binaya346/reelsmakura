@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Creators & Brands Love Us — ReelsNepal</title>
+
+  <!-- Fonts: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== Brand Tokens (ReelsNepal) ====== */
+    :root{
+      --primary:#FF3C68;     /* brand pink/red */
+      --secondary:#141414;   /* ink */
+      --accent:#FFD700;      /* gold */
+      --bg:#FDFDFD;          /* page */
+      --cta:#7F56D9;         /* purple CTA */
+
+      /* UI neutrals + tints used in the mock */
+      --card-bg:#FFFFFF;
+      --card-tint-1:#FFF6F8; /* soft warm tint */
+      --card-tint-2:#FFF8EF; /* soft orange tint */
+      --card-tint-3:#F7F4FF; /* soft lilac tint */
+      --card-tint-4:#FFF8F0; /* soft neutral tint */
+      --border:#EAEAEA;
+      --text:#1F2937;        /* slate-ish heading */
+      --muted:#4B5563;       /* body */
+      --shadow: 0 6px 18px rgba(20,20,20,.06);
+      --radius:16px;
+      --radius-lg:22px;
+      --container:1200px;
+    }
+
+    /* ====== Base ====== */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: var(--bg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: clamp(24px, 4vw, 48px);
+    }
+
+    /* Subtle background flourish: very light corner gradients */
+    .why-section{
+      position:relative;
+      isolation:isolate;
+      overflow:clip;
+    }
+    .why-section::before,
+    .why-section::after{
+      content:"";
+      position:absolute;
+      inset:auto auto 0 -10%;
+      width:55%;
+      height:55%;
+      background: radial-gradient(40% 40% at 30% 70%, rgba(255,60,104,.08), transparent 70%);
+      filter: blur(20px);
+      z-index:-1;
+    }
+    .why-section::after{
+      inset:-10% -10% auto auto;
+      width:45%;
+      height:45%;
+      background: radial-gradient(50% 50% at 70% 30%, rgba(127,86,217,.08), transparent 70%);
+    }
+
+    /* ====== Heading ====== */
+    .title{
+      font-family: Poppins, Inter, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-align:center;
+      color:#212936;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height:1.15;
+      margin: 12px 0 28px;
+    }
+
+    /* ====== Grid ====== */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width:720px){
+      .grid{grid-template-columns: repeat(2,1fr); gap:20px;}
+    }
+    @media (min-width:1080px){
+      .grid{grid-template-columns: repeat(4,1fr); gap:22px;}
+    }
+
+    /* ====== Card ====== */
+    .card{
+      background: var(--card-bg);
+      border:1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{ transform: translateY(-2px); box-shadow: 0 10px 26px rgba(20,20,20,.08); }
+
+    /* top tint area to match mock */
+    .card-top{
+      padding: 24px 22px 8px;
+      min-height: 124px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
+    }
+    .tint-1{ background: var(--card-tint-1);}
+    .tint-2{ background: var(--card-tint-2);}
+    .tint-3{ background: var(--card-tint-3);}
+    .tint-4{ background: var(--card-tint-4);}
+
+    /* Icon placeholder (swap with your SVGs later) */
+    .icon{
+      width:96px; height:96px;
+      border-radius:20px;
+      display:grid; place-items:center;
+      background:#fff;
+      border:1px dashed #D7D7D7;
+      color:#9CA3AF;
+      font-size:12px; font-weight:600;
+      user-select:none;
+    }
+
+    .card-body{
+      padding: 18px 22px 22px;
+    }
+    .card h3{
+      font-family: Poppins, Inter, sans-serif;
+      font-weight: 700;
+      font-size: clamp(18px, 1.7vw, 22px);
+      line-height:1.25;
+      margin: 6px 0 10px;
+      color:#111827;
+      letter-spacing:-0.01em;
+    }
+    .card p{
+      margin:0;
+      color: var(--muted);
+      font-size: clamp(14px, 1.35vw, 16px);
+      line-height:1.6;
+    }
+
+    /* micro-detail: match the rounded card corners and inner top radius */
+    .card-top{ border-bottom:1px solid rgba(0,0,0,.04); }
+
+  </style>
+</head>
+<body>
+
+  <section class="why-section">
+    <div class="wrap">
+      <h2 class="title">Why Creators &amp; Brands Love Us</h2>
+
+      <div class="grid">
+
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="card-top tint-1">
+            <!-- Replace this with your target/arrow SVG -->
+            <div class="icon">ICON</div>
+          </div>
+          <div class="card-body">
+            <h3>Strategic +<br/>Creative</h3>
+            <p>Every reel is made to grab attention and convert.</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="card-top tint-2">
+            <!-- Replace with document + clock SVG -->
+            <div class="icon">ICON</div>
+          </div>
+          <div class="card-body">
+            <h3>Lightning Fast<br/>Turnaround</h3>
+            <p>Get reels delivered in 72 hours.</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="card-top tint-3">
+            <!-- Replace with Nepali flag SVG -->
+            <div class="icon">ICON</div>
+          </div>
+          <div class="card-body">
+            <h3>Local Insight,<br/>Global Quality</h3>
+            <p>Nepali storytelling with world‑class production.</p>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <div class="card-top tint-4">
+            <!-- Replace with robot/face-less SVG -->
+            <div class="icon">ICON</div>
+          </div>
+          <div class="card-body">
+            <h3>Face or Faceless?<br/>Both.</h3>
+            <p>We create stunning faceless reels.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

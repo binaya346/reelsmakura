@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>See Our Work in Action</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Background gradient (close to your reference) */
+      --bg-1:#3F37FF; /* top-left bluish */
+      --bg-2:#7A2BFF; /* center purple */
+      --bg-3:#4B2BFF; /* bottom-right deep */
+      /* Card fills */
+      --card-pink:#FF7DA5;
+      --card-deeppurple:#251452;
+      --card-yellow:#FFD166;
+      --card-peach:#FF7DA5; /* same tone as top-left for harmony */
+      /* Text */
+      --white:#FDFDFD;
+      --muted:#DCD5FF;
+      /* Pills */
+      --pill-bg:#FF6B6B;
+      --pill-text:#FFFFFF;
+      /* CTA */
+      --cta-bg:#6F5BFF;
+      --cta-bg-hover:#5C48FF;
+      --cta-text:#FFFFFF;
+      /* Card styling */
+      --radius:22px;
+      --shadow: 0 12px 40px rgba(0,0,0,.25);
+      --inset: inset 0 10px 20px rgba(255,255,255,.1);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, var(--bg-1) 0%, transparent 60%),
+        radial-gradient(1400px 800px at 80% 100%, var(--bg-3) 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg-2), var(--bg-3));
+      color:var(--white);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      -webkit-font-smoothing:antialiased;
+      padding:56px 20px 96px;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      text-align:center;
+    }
+
+    h1{
+      font-family:Poppins, Inter, sans-serif;
+      font-weight:700;
+      font-size: clamp(32px, 4.2vw, 56px);
+      line-height:1.1;
+      margin:12px 0 12px;
+      letter-spacing:.2px;
+    }
+
+    .sub{
+      color:var(--muted);
+      font-size: clamp(15px, 1.7vw, 20px);
+      line-height:1.5;
+      max-width:740px;
+      margin:0 auto 36px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:26px;
+      place-items:stretch;
+    }
+    @media (max-width:800px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
+    .card{
+      position:relative;
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      padding:0;
+      min-height:260px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      isolation:isolate;
+    }
+    .card::after{
+      content:"";
+      position:absolute; inset:0;
+      box-shadow:var(--inset);
+      pointer-events:none;
+    }
+    .card-inner{
+      width:85%;
+      height:85%;
+      display:grid;
+      place-items:center;
+    }
+
+    /* top-left label pill */
+    .pill{
+      position:absolute;
+      top:16px; left:16px;
+      background:var(--pill-bg);
+      color:var(--pill-text);
+      font-weight:600;
+      font-size:14px;
+      padding:6px 12px;
+      border-radius:999px;
+      box-shadow:0 6px 14px rgba(0,0,0,.18);
+      letter-spacing:.2px;
+    }
+
+    /* Play button overlay */
+    .play{
+      position:absolute;
+      width:64px; height:64px;
+      display:grid; place-items:center;
+      border-radius:50%;
+      background:#ffffff;
+      box-shadow:0 8px 20px rgba(0,0,0,.25);
+      z-index:2;
+    }
+    .play svg{ width:26px; height:26px; display:block; }
+
+    /* Card specific colors */
+    .c1{ background:var(--card-pink); }
+    .c2{ background:var(--card-deeppurple); }
+    .c3{ background:var(--card-yellow); }
+    .c4{ background:var(--card-peach); }
+
+    /* CTA */
+    .cta-bar{
+      display:flex; justify-content:center; align-items:center;
+      margin-top:22px;
+    }
+    .cta{
+      appearance:none; border:0; cursor:pointer;
+      background:var(--cta-bg);
+      color:var(--cta-text);
+      padding:16px 26px;
+      border-radius:999px;
+      font-weight:700;
+      font-family:Inter, sans-serif;
+      letter-spacing:.2px;
+      box-shadow:0 14px 30px rgba(0,0,0,.28);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .cta:hover{ background:var(--cta-bg-hover); transform:translateY(-1px) }
+    .cta:active{ transform:translateY(0) }
+
+    /* SVG sizing helpers */
+    .svg-wrap{ width:min(240px, 70%); }
+    @media (max-width:480px){
+      .play{ width:56px; height:56px }
+      .play svg{ width:22px; height:22px }
+      .card{ min-height:220px }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" aria-labelledby="title">
+    <h1 id="title">See Our Work in Action</h1>
+    <p class="sub">From trending reels to storytelling shorts — here’s how we bring brands to life.</p>
+
+    <section class="grid" aria-label="Portfolio grid">
+      <!-- Card 1 -->
+      <article class="card c1">
+        <span class="pill">Faceless</span>
+        <div class="card-inner">
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 7l8 5-8 5V7z" fill="#6F5BFF"/>
+            </svg>
+          </span>
+          <!-- PHONE PLACEHOLDER -->
+          <div class="svg-wrap" aria-label="Phone placeholder" role="img">
+            <svg viewBox="0 0 300 300">
+              <defs>
+                <linearGradient id="phA" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#D9C7FF"/>
+                  <stop offset="100%" stop-color="#9C7BFF"/>
+                </linearGradient>
+              </defs>
+              <rect x="80" y="40" rx="28" ry="28" width="140" height="220" fill="url(#phA)" />
+              <rect x="105" y="85" rx="24" ry="24" width="90" height="120" fill="#8B6CFF"/>
+              <circle cx="150" cy="145" r="30" fill="#FFFFFF"/>
+              <polygon points="140,130 168,145 140,160" fill="#7A2BFF"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card c2">
+        <span class="pill">Branding</span>
+        <div class="card-inner">
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 7l8 5-8 5V7z" fill="#6F5BFF"/>
+            </svg>
+          </span>
+          <!-- ROCKET PLACEHOLDER -->
+          <div class="svg-wrap" aria-label="Rocket placeholder" role="img">
+            <svg viewBox="0 0 300 300">
+              <defs>
+                <linearGradient id="rkA" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FFE5F2"/>
+                  <stop offset="100%" stop-color="#C6B6FF"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="170" cy="150" rx="70" ry="90" fill="url(#rkA)" />
+              <circle cx="195" cy="145" r="18" fill="#6F5BFF"/>
+              <path d="M100 210 L150 180 L140 230 Z" fill="#FF6B6B"/>
+              <path d="M240 200 L190 180 L200 230 Z" fill="#FF6B6B"/>
+              <path d="M170 235 Q165 265 150 280 Q175 270 190 255 Q178 260 170 235Z" fill="#FFB703"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card c3">
+        <span class="pill">NGO</span>
+        <div class="card-inner">
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 7l8 5-8 5V7z" fill="#6F5BFF"/>
+            </svg>
+          </span>
+          <!-- MEGAPHONE PLACEHOLDER -->
+          <div class="svg-wrap" aria-label="Megaphone placeholder" role="img">
+            <svg viewBox="0 0 300 300">
+              <defs>
+                <linearGradient id="mgA" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#EEDCFF"/>
+                  <stop offset="100%" stop-color="#B89BFF"/>
+                </linearGradient>
+              </defs>
+              <path d="M190 110 L250 130 L250 170 L190 190 Z" fill="#8B6CFF"/>
+              <rect x="120" y="140" width="80" height="40" fill="url(#mgA)" />
+              <rect x="110" y="165" width="30" height="70" rx="8" fill="#5531FF"/>
+              <circle cx="260" cy="150" r="6" fill="#FF6B6B"/>
+              <circle cx="275" cy="160" r="4" fill="#FF6B6B"/>
+              <circle cx="270" cy="138" r="4" fill="#FF6B6B"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card c4">
+        <span class="pill">Promo</span>
+        <div class="card-inner">
+          <span class="play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 7l8 5-8 5V7z" fill="#6F5BFF"/>
+            </svg>
+          </span>
+          <!-- PHONE + BAG PLACEHOLDER -->
+          <div class="svg-wrap" aria-label="Phone promo placeholder" role="img">
+            <svg viewBox="0 0 300 300">
+              <defs>
+                <linearGradient id="phB" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#F9DFFF"/>
+                  <stop offset="100%" stop-color="#AE93FF"/>
+                </linearGradient>
+              </defs>
+              <rect x="90" y="50" rx="28" ry="28" width="120" height="210" fill="url(#phB)" />
+              <rect x="115" y="120" rx="16" ry="16" width="70" height="80" fill="#7A2BFF"/>
+              <path d="M125 140 q10 -20 25 -20 q15 0 25 20" fill="none" stroke="#FFD166" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="cta-bar">
+      <button class="cta">View Portfolio</button>
+    </div>
+  </main>
+</body>
+</html>

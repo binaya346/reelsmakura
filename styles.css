@@ -1,0 +1,155 @@
+/* ---------- Design tokens ---------- */
+:root{
+  --bg-start: #FFE7EE;
+  --bg-end:   #FFF8E9;
+
+  --ink: #1A1D2B;              /* Title / dark text */
+  --muted: #4D5561;            /* Sub / body */
+
+  --card-pink:   #FF5C8A;
+  --card-pink-2: #FF7AA3;
+
+  --card-purple: #6F54F7;
+  --card-purple-2:#815CF8;
+
+  --card-butter: #FFF3BC;
+  --card-butter-ink:#2E2654;
+
+  --card-lilac:  #F1D6FF;
+
+  --card-radius: 20px;
+  --shadow: 0 10px 24px rgba(22, 25, 40, 0.08);
+}
+
+/* ---------- Base ---------- */
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 50% -10%, var(--bg-start), rgba(255,231,238,0)),
+    linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+}
+
+/* ---------- Section ---------- */
+.create-for-you{
+  padding: 72px 16px 96px;
+}
+.container{
+  max-width: 1120px;
+  margin-inline: auto;
+}
+.section-title{
+  font-family: Poppins, Inter, sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin: 8px 0 36px;
+}
+
+/* ---------- Cards Grid ---------- */
+.cards{
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1024px){
+  .cards{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .cards{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Card ---------- */
+.card{
+  background: #fff;
+  border-radius: var(--card-radius);
+  padding: 28px 24px 30px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+}
+
+/* Accent backgrounds per card */
+.card--pink{
+  background: linear-gradient(180deg, #FF6B95 0%, #FF4D80 100%);
+  color: #fff;
+}
+.card--purple{
+  background: linear-gradient(180deg, var(--card-purple) 0%, var(--card-purple-2) 100%);
+  color: #fff;
+}
+.card--butter{
+  background: var(--card-butter);
+  color: var(--card-butter-ink);
+  border: 1px solid #F5E6A7;
+}
+.card--lilac{
+  background: var(--card-lilac);
+  color: #3B2B66;
+  border: 1px solid #E9C8FF;
+}
+
+/* Icon placeholder styles */
+.icon{
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(1px);
+}
+.card--butter .icon{ background: rgba(255,255,255,0.6); }
+.card--lilac  .icon{ background: rgba(255,255,255,0.5); }
+
+.icon svg{ width: 44px; height: 44px; }
+.i-stroke{ fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.i-fill{ fill: currentColor; }
+
+/* Titles & text */
+.card-title{
+  font-family: Poppins, Inter, sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.15;
+  margin: 2px 0 6px;
+  letter-spacing: -0.01em;
+}
+.card-sub{
+  font-weight: 600;
+  margin: 0 0 6px;
+  opacity: 0.95;
+}
+.card-desc{
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 8px 0 0;
+  color: rgba(255,255,255,0.95);
+}
+.card--butter .card-desc{ color: #4C4560; }
+.card--lilac  .card-desc{ color: #4A3D6F; }
+
+/* Sub under pink card, slightly dimmer */
+.card--pink .card-sub{ color: rgba(255,255,255,0.95); }
+.card--purple .card-desc{ color: rgba(255,255,255,0.95); }
+
+/* Subtle inner highlight circles for depth (like the reference) */
+.card--pink::after,
+.card--purple::after{
+  content:"";
+  position:absolute;
+  right:-40px;
+  top:-40px;
+  width:180px;
+  height:180px;
+  background: radial-gradient(closest-side, rgba(255,255,255,0.35), rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  pointer-events:none;
+}

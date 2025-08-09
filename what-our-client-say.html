@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ReelsNepal — Testimonials</title>
+
+<!-- Fonts (brand: Poppins for headings, Inter for body) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* Brand-friendly palette tuned to the mock */
+  --bg: #F7F7FB;
+  --card: #FFFFFF;
+  --card-soft: #FFEFF5;       /* center card tint */
+  --text: #0F172A;            /* heading */
+  --body: #374151;            /* regular text */
+  --muted: #6B7280;           /* roles */
+  --purple: #7F56D9;          /* link / accent */
+  --purple-500: #8B5CF6;      /* quote marks */
+  --shadow: 0 20px 50px rgba(23, 23, 23, 0.08);
+  --radius: 18px;
+}
+
+/* Page background with soft vignette to match the glow */
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 400px at 50% -200px, rgba(127,86,217,.18), transparent 60%),
+    radial-gradient(900px 300px at 50% 110%, rgba(127,86,217,.08), transparent 60%),
+    var(--bg);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Container */
+.wrapper{
+  max-width: 1160px;
+  padding: 64px 20px 88px;
+  margin: 0 auto;
+}
+
+/* Heading */
+h2{
+  font-family: Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--text);
+  margin: 0 0 36px;
+}
+
+/* Cards grid */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 1024px){
+  .grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+/* Card */
+.card{
+  position: relative;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px 28px 22px;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+/* subtle inner glow like the mock */
+.card::after{
+  content:"";
+  position:absolute; inset:-2px;
+  border-radius: calc(var(--radius) + 2px);
+  background: radial-gradient(400px 180px at 50% 0%, rgba(127,86,217,.06), transparent 60%);
+  pointer-events:none;
+}
+
+/* Center card has pink tint */
+.card.soft{
+  background: var(--card-soft);
+}
+.card.soft::after{
+  background: radial-gradient(380px 170px at 50% 0%, rgba(255,60,104,.10), transparent 60%);
+}
+
+/* Quote mark icon */
+.q{
+  display:inline-flex;
+  width: 28px; height: 28px;
+  margin-bottom: 14px;
+  color: var(--purple-500);
+}
+.q svg{ width:100%; height:100%; display:block; }
+
+/* Testimonial text */
+.card p.copy{
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--body);
+  margin: 0 0 24px;
+}
+
+/* Person */
+.person{
+  display:flex; align-items:center; gap:14px;
+  margin-bottom: 6px;
+}
+.avatar{
+  width:48px; height:48px; border-radius: 999px; flex:0 0 48px;
+  background: linear-gradient(135deg,#FDE68A,#FDBA74);
+  display:grid; place-items:center; overflow:hidden;
+}
+.avatar img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* Name/role */
+.name{
+  font-weight: 700;
+  color: var(--purple);
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+.role{
+  font-size: 14px; color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Stars row pinned bottom-left (like the screenshot) */
+.stars{
+  display:flex; gap:8px; margin-top: 18px;
+}
+.star{ width:18px; height:18px; color: var(--purple); opacity: 0.98; }
+
+/* Keep the stars anchored at the visual bottom-left */
+.footer{
+  margin-top:auto;
+}
+
+</style>
+</head>
+<body>
+  <main class="wrapper">
+    <h2>What Our Clients Say</h2>
+
+    <section class="grid">
+
+      <!-- Card 1 -->
+      <article class="card">
+        <div>
+          <span class="q" aria-hidden="true">
+            <!-- Quote SVG -->
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 7.5c0-1.657-1.343-3-3-3S3.5 5.843 3.5 7.5s1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 5.24 17.5c2.8-2.34 4.26-5.3 4.26-10zM20.5 7.5c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 16.24 17.5c2.8-2.34 4.26-5.3 4.26-10z"/></svg>
+          </span>
+
+          <p class="copy">
+            They just get content. My reels finally started performing!
+          </p>
+
+          <div class="person">
+            <span class="avatar">
+              <!-- Placeholder avatar -->
+              <!-- <img src="ramesh.jpg" alt="Ramesh S."> -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>
+            </span>
+            <div>
+              <div class="name">Ramesh S.</div>
+              <div class="role">Co‑founder, StartUpNepal</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="stars" aria-label="5 star rating">
+            <!-- 5 stars -->
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 (soft pink) -->
+      <article class="card soft">
+        <div>
+          <span class="q" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 7.5c0-1.657-1.343-3-3-3S3.5 5.843 3.5 7.5s1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 5.24 17.5c2.8-2.34 4.26-5.3 4.26-10zM20.5 7.5c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 16.24 17.5c2.8-2.34 4.26-5.3 4.26-10z"/></svg>
+          </span>
+
+          <p class="copy">
+            Faceless videos that actually connect with people. Love the flow!
+          </p>
+
+          <div class="person">
+            <span class="avatar" style="background:linear-gradient(135deg,#FBCFE8,#FDE68A);">
+              <!-- <img src="sarita.jpg" alt="Sarita K."> -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>
+            </span>
+            <div>
+              <div class="name">Sarita K.</div>
+              <div class="role">Lifestyle Creator</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="stars" aria-label="5 star rating">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <div>
+          <span class="q" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 7.5c0-1.657-1.343-3-3-3S3.5 5.843 3.5 7.5s1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 5.24 17.5c2.8-2.34 4.26-5.3 4.26-10zM20.5 7.5c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.172 0 .34-.014.503-.041-.725 1.603-1.697 3.13-2.915 4.58A1.5 1.5 0 0 0 16.24 17.5c2.8-2.34 4.26-5.3 4.26-10z"/></svg>
+          </span>
+
+          <p class="copy">
+            Everything was delivered ahead of schedule— and better than expected.
+          </p>
+
+          <div class="person">
+            <span class="avatar" style="background:linear-gradient(135deg,#C7D2FE,#A7F3D0);">
+              <!-- <img src="ankit.jpg" alt="Ankit M."> -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><circle cx="12" cy="9" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>
+            </span>
+            <div>
+              <div class="name">Ankit M.</div>
+              <div class="role">Campaign Manager, NGOConnect</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="stars" aria-label="5 star rating">
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 5.88 6.5.95-4.7 4.58 1.1 6.49L12 17.77 6.2 20.4l1.1-6.49L2.6 9.33l6.5-.95L12 2.5z"/></svg>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>

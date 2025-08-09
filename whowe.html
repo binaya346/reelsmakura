@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Who We Create For – with Flowers</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#2B1E4A;
+    --body:#5B5871;
+    --cream:#FFF9F1;
+    --card-1:#FDECEF;
+    --card-2:#EFE7FF;
+    --card-3:#FFF2D9;
+    --shadow: 0 10px 30px rgba(24,12,46,.08);
+    --radius-lg: 26px;
+    --maxw: 1200px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+
+  .section{ position:relative; overflow:hidden; padding:clamp(48px,7vw,96px) 20px; }
+
+  /* wavy band */
+  .wave{
+    position:absolute; inset:auto 0 auto 0; top:clamp(20px,6vw,48px);
+    height:140px; z-index:-1; opacity:.28; pointer-events:none;
+  }
+
+  /* FLOWER FIELD LAYER */
+  .bg-flowers{
+    position:absolute; inset:0; z-index:-2; pointer-events:none;
+  }
+  .f{ position:absolute; opacity:.85; filter: drop-shadow(0 4px 12px rgba(24,12,46,.06)); }
+  .f.small{ width:42px; height:42px }
+  .f.med{ width:72px; height:72px }
+  .f.big{ width:108px; height:108px }
+
+  /* color tokens for petals */
+  .petal-pink { fill:#FFD6E2 }
+  .petal-yellow { fill:#FFE6A6 }
+  .petal-lav { fill:#EDE4FF }
+  .petal-cream { fill:#FFF3E2 }
+
+  .container{ max-width:var(--maxw); margin:0 auto; position:relative }
+  h2{
+    margin:0 0 clamp(28px,4vw,44px); text-align:center; font-weight:800;
+    letter-spacing:-.02em; line-height:1.05; font-size:clamp(28px,4.6vw,56px);
+  }
+
+  .grid{ display:grid; gap:clamp(16px,2.2vw,28px); grid-template-columns:1fr }
+  @media (min-width:720px){ .grid{ grid-template-columns:repeat(2,minmax(0,1fr)) } }
+  @media (min-width:1024px){ .grid{ grid-template-columns:repeat(4,minmax(0,1fr)) } }
+
+  .card{
+    background:white; border-radius:var(--radius-lg); padding:22px 22px 24px;
+    box-shadow:var(--shadow); position:relative; overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{ transform:translateY(-2px); box-shadow:0 14px 40px rgba(24,12,46,.12) }
+  .card[data-t="1"]{ background:var(--card-1) }
+  .card[data-t="2"]{ background:var(--card-2) }
+  .card[data-t="3"]{ background:var(--card-3) }
+  .card[data-t="4"]{ background:var(--card-2) }
+
+  .icon-wrap{
+    width:64px; height:64px; display:grid; place-items:center; border-radius:16px;
+    background:rgba(255,255,255,.55); box-shadow:inset 0 0 0 1px rgba(0,0,0,.04); margin-bottom:14px;
+  }
+  .icon{ width:36px; height:36px; display:block }
+  .sparkle{ position:absolute; width:14px; height:14px; right:18px; top:16px; opacity:.8 }
+
+  h3{ margin:6px 0 10px; font-weight:800; font-size:clamp(18px,2.2vw,24px); letter-spacing:-.01em; line-height:1.2 }
+  .amp{ display:block }
+  .card p{ margin:0; color:var(--body); font-size:clamp(14px,1.45vw,16px); line-height:1.6 }
+
+  @media (prefers-reduced-motion: reduce){ .card{ transition:none } .card:hover{ transform:none } }
+</style>
+</head>
+<body>
+
+<section class="section">
+
+  <!-- soft wave -->
+  <svg class="wave" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,120 C160,60 320,60 480,120 C640,180 800,180 960,120 C1120,60 1280,60 1440,120 L1440,200 L0,200 Z" fill="#F5E8FF"/>
+  </svg>
+
+  <!-- FLOWER/Sparkle BG (multiple positioned SVGs) -->
+  <div class="bg-flowers" aria-hidden="true">
+    <!-- defs once -->
+    <svg width="0" height="0">
+      <defs>
+        <!-- 5-petal rounded flower -->
+        <symbol id="flwr" viewBox="0 0 100 100">
+          <path d="M50 15c9 0 14 10 14 18 0-8 9-14 18-14s18 9 18 18-6 18-14 18c8 0 18 9 18 18s-9 18-18 18-18-10-18-18c0 8-5 18-14 18s-18-10-18-18c0 8-10 18-18 18S-4 89-4 80 6 62 14 62C6 62-4 52-4 43S6 25 14 25s18 6 18 14c0-8 9-24 18-24Z"/>
+        </symbol>
+        <!-- sparkle star -->
+        <symbol id="sprk" viewBox="0 0 24 24">
+          <path d="M12 2l2.2 5.1L19 9.5l-4.8 1.7L12 16l-2.2-4.8L5 9.5l4.8-2.4L12 2z"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <!-- place flowers -->
+    <svg class="f big" style="left:-30px; top:-24px">
+      <use href="#flwr" class="petal-pink"/>
+    </svg>
+    <svg class="f med" style="left:80px; bottom:80px; transform:rotate(18deg)">
+      <use href="#flwr" class="petal-yellow"/>
+    </svg>
+    <svg class="f med" style="right:70px; top:70px; transform:rotate(-12deg)">
+      <use href="#flwr" class="petal-lav"/>
+    </svg>
+    <svg class="f small" style="right:-14px; bottom:120px; transform:rotate(10deg)">
+      <use href="#flwr" class="petal-cream"/>
+    </svg>
+    <svg class="f small" style="left:28px; top:55%; transform:rotate(-8deg)">
+      <use href="#flwr" class="petal-yellow"/>
+    </svg>
+    <svg class="f small" style="right:22px; bottom:26px">
+      <use href="#flwr" class="petal-pink"/>
+    </svg>
+
+    <!-- subtle sparkles -->
+    <svg class="f small" style="left:22%; top:18%; width:18px; height:18px; opacity:.55">
+      <use href="#sprk" fill="#FFD6E2"/>
+    </svg>
+    <svg class="f small" style="right:24%; top:26%; width:18px; height:18px; opacity:.55">
+      <use href="#sprk" fill="#FFE6A6"/>
+    </svg>
+    <svg class="f small" style="left:12%; bottom:22%; width:18px; height:18px; opacity:.55">
+      <use href="#sprk" fill="#EDE4FF"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <h2>Who We Create For</h2>
+
+    <div class="grid">
+      <!-- Card 1 -->
+      <article class="card" data-t="1">
+        <span class="sparkle" aria-hidden="true">
+          <svg viewBox="0 0 16 16" class="icon"><path d="M8 1.5l1.4 3.2L12.6 6 9.4 7.2 8 10.5 6.6 7.2 3.4 6l3.2-1.3L8 1.5z" fill="#FF7CA3"/></svg>
+        </span>
+        <div class="icon-wrap" aria-hidden="true">
+          <!-- Mic -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <rect x="8" y="3" width="8" height="12" rx="4" stroke="#2B1E4A" stroke-width="2"/>
+            <path d="M5 11c0 4 3 7 7 7s7-3 7-7" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 18v3" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Influencers<span class="amp">&amp; Creators</span></h3>
+        <p>Short form content that matches your voice and vibe — with or without your face.</p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card" data-t="2">
+        <span class="sparkle" aria-hidden="true">
+          <svg viewBox="0 0 16 16" class="icon"><circle cx="12" cy="4" r="2" fill="#9B8CFF"/></svg>
+        </span>
+        <div class="icon-wrap" aria-hidden="true">
+          <!-- Rocket -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path d="M13 11l-2 2-4-4 2-2c3-3 8-4 12-4-0 4-1 9-4 12l-2 2-4-4z" stroke="#2B1E4A" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M7 13l-2 4 4-2" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="6" r="1.6" stroke="#2B1E4A" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Startups<span class="amp">&amp; Brands</span></h3>
+        <p>Boost your reach with consistent, branded reels that <strong>tell your story</strong>.</p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card" data-t="3">
+        <span class="sparkle" aria-hidden="true">
+          <svg viewBox="0 0 16 16" class="icon"><path d="M8 1v6M8 15v0" stroke="#FFC557" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <div class="icon-wrap" aria-hidden="true">
+          <!-- Bulb -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path d="M8 14a4 4 0 1 1 8 0c0 2-2 3-2 4H10c0-1-2-2-2-4z" stroke="#2B1E4A" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M10 20h4" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Coaches<span class="amp">&amp; Educators</span></h3>
+        <p>Turn ideas into engaging visuals for your audience — even if you hate editing.</p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card" data-t="4">
+        <span class="sparkle" aria-hidden="true">
+          <svg viewBox="0 0 16 16" class="icon"><circle cx="4" cy="12" r="2" fill="#C3B7FF"/></svg>
+        </span>
+        <div class="icon-wrap" aria-hidden="true">
+          <!-- Megaphone -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12l12-6v12L4 12z" stroke="#2B1E4A" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8 13l1.5 4" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 9a3 3 0 010 6" stroke="#2B1E4A" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Campaigns<span class="amp">&amp; NGOs</span></h3>
+        <p>Spread your message with powerful storytelling in reel format.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
